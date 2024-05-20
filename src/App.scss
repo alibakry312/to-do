@@ -1,0 +1,135 @@
+$background: #ebf2f2;
+$red: #f23005;
+$second-color: #689ba6;
+
+
+.container {
+  max-width: 380px;
+  background-color: $background;
+  min-height: 100px;
+  border-radius: 10px;
+  margin: 100px auto 10px;
+  padding: 30px 20px 40px;
+  .form {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    background-color: white;
+    margin-bottom: 30px;
+    border: .5px solid $second-color;
+    border-radius: 7px;
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 12px 0;
+      font-size: 15px;
+    }
+    button {
+      border: none;
+      border-radius: 7px;
+      padding: 0px 10px;
+      background-color: $red;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      transition: linear .3s;
+      &:hover {
+        background-color: $second-color;
+      }
+      &:active {
+        transform: scaleX(1.1);
+        background-color: $red;
+
+      }
+    } 
+  }
+} // ^ inside container
+
+// ###### Tasks #######
+.tasks {
+  max-width: 380px;
+  background-color: $background;
+  min-height: 100px;
+  border-radius: 10px;
+  margin: 30px auto 80px;
+  padding: 20px 20px 30px;
+  h2 {
+    margin: 0;
+    text-align: center;
+    color: $second-color;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+    .item-box {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      position: relative;
+      transition: opacity 0.5s ease-in-out;    
+      li {
+        background-color: white;
+        width: 81%;
+        text-align: left;
+        padding: 5px 15px;
+        border-radius: 7px;
+        color: $second-color;
+        font-weight: 600;
+        cursor: pointer;
+        &.done {
+          background-color: $second-color;
+          color: white;
+          transition: .4s;
+          }           
+        }
+      .delete-icon {
+        position: absolute;
+        right: 0px;
+        top: 0;
+        width: 34px;
+        height: 100%;
+        background-color: white;
+        color: $red;
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+          content: "";
+          background-color: $red;
+          width: 100%;
+          border-radius: 7px;
+        }
+        &:hover .trash {
+          color: #ebf2f2;
+        }
+      }
+    }
+  }
+}
+// ########## Animations ##########
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeOut {
+  from { width: 100% }
+  to { width: 0 }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
